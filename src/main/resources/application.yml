@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+  mail:
+    host: smtp.qq.com
+    username: cwangjie@qq.com
+    password: qyqfhjpjvtvsgdba
+    recipients: cwangjie@qq.com, pkutjchern@gmail.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.qq.com
+  datasource:
+    schema: classpath:DB/DDL_SQL.sql
+    sql-script-encoding: utf-8
+    initialization-mode: always
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+mybatis:
+  mapper-locations: classpath*:mapper/mysql/*.xml
+  type-aliases-package: shop.tronlucky.trondapp.model
